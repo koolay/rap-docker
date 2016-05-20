@@ -1,0 +1,30 @@
+data-mysql:
+  image: daocloud.io/koolay/mysql:latest
+  command: echo mysql
+  volumes:
+   - /var/lib/mysql/
+
+mysql:
+    image: daocloud.io/koolay/mysql:latest
+    ports:
+     - "3306:3306"
+    environment:
+     - MYSQL_ROOT_PASSWORD=dev
+     - MYSQL_DATABASE=sentry
+    volumes_from:
+     - data-mysql
+
+redis:
+    image: daocloud.io/koolay/alpine-redis:latest
+    ports:
+      - "6379:6379"
+
+
+rap:
+    image: rap
+    links:
+    - "mysql"
+    - "redis"
+    ports:
+     - "8080:8080"
+
