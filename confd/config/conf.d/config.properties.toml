@@ -1,0 +1,11 @@
+[template]
+src    = "config.properties.tmpl"
+dest   = "/opt/tomcat/webapps/ROOT/WEB-INF/classes/config.properties"
+keys   = [
+    "mysql/host",
+    "mysql/port",
+    "mysql/username",
+    "mysql/password",
+    "redis/host",
+    "redis/port"
+]
