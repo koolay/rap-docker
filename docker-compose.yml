@@ -21,7 +21,7 @@ redis:
 
 
 rap:
-    image: daocloud.io/koolay/rap:latest
+    image: rap
     links:
     - "mysql"
     - "redis"
