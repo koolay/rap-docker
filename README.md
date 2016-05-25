@@ -11,6 +11,7 @@
 ```
 git clone https://github.com/koolay/rap.git
 cd rap
+sudo docker build -t rap .
 sudo docker-compose up -d
 
 ```
